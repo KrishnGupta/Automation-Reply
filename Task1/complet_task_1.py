@@ -18,7 +18,7 @@ logger.setLevel(logging.INFO)
 
 # Constants for OAuth2.0 authentication and API access
 SCOPES = ['User.Read','Mail.Read']
-APP_ID = 'a7c0a132-7332-4d7e-a59b-879f4d227bcb'
+APP_ID = 'client_id'
 #
 base_tmp_path = "/tmp/"
 
@@ -144,11 +144,11 @@ def post_queries_to_api(access_token,json_data):
 
 # Lambda function handler
 def lambda_handler(event, context):
-    HOST = "34.235.162.214"
-    PORT = 3306
-    USER = "staging_adbutler"
-    PASSWORD = "staging_adbutler"
-    DB = "staging_adbutler"
+    HOST = "your.db.host"
+    PORT = "your post"
+    USER = "DB_USER"
+    PASSWORD = "DB_PASSWORD"
+    DB = "DB_NAME"
     TABLE_NAME = "automated_replies_filters"
     connection = mysql.connector.connect(host=HOST, port=PORT,user=USER,passwd=PASSWORD, db=DB)
     cursor = connection.cursor()
